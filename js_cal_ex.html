@@ -1,0 +1,177 @@
+<html>
+
+   <head>
+
+      <script type = "text/javascript">
+
+         <!--
+
+            /*
+
+            (1) This function will compute the price of a pizza.
+
+            (2) The size and price of a pizza can be:
+
+                small pizzz - $10, 
+
+                medium pizza - $12, 
+
+                large pizza - $15
+
+            (3) The price of each topping is:
+
+                ham - $3, 
+
+                pepperoni - $5, 
+
+                mushrooms - $4, 
+
+                pineapple - $2 
+
+            */
+
+            function fun() 
+
+            {
+
+              /*
+
+                the data type retrieved from a text field is a string
+
+                after multiplied by 1*, it becomes a number, and can 
+
+                used to calculate the price
+
+             */
+
+              var size = 1*document.pizza.size.value; //small - $10, medium - $12, large - $15
+
+              
+
+              //ham - $3, pepperoni - $5, mushrooms - $4, pineapple - $2     
+
+              var topping_ham_price = 3*document.pizza.ham.value;
+
+              var topping_pepperoni_price = 5*document.pizza.pepperoni.value;
+
+              var topping_mushrooms_price = 4*document.pizza.mushrooms.value;
+
+              var topping_pineapple_price = 2*document.pizza.pineapple.value;
+
+              
+
+              var price = 0;
+
+              var message = "";
+
+              
+
+              /*
+
+              compute the price of a small pizza having 2 ham toppings, 
+
+              3 pepperoni toppings, 1 mushrooms toppings, and 2 pineapple toppings
+
+              */
+
+              price = size+topping_ham_price
+
+                         + topping_pepperoni_price
+
+                         + topping_mushrooms_price
+
+                         + topping_pineapple_price; 
+
+              
+
+              if(price>100)
+
+              {
+
+                  message = "your order is $"+price+" that is greater than $100, so you will have 10% discount";
+
+                  price = price *0.9;
+
+              }
+
+              else if((price<=100)&&(price>=90))
+
+              {
+
+                  message = "your order is $"+price+" that is greater than $90 and less than $100, so you will have 5% discount";
+
+                  price =price*0.95;
+
+              }
+
+              else
+
+              {
+
+                  message = "your order is $"+price;
+
+                  price = price;
+
+              }
+
+              alert(message+" You will pay $"+price);
+
+              
+
+            }
+
+         //-->
+
+      </script>
+
+   </head>
+
+   <body>
+
+      <p>Click the following button and see result</p>
+
+      <form name="pizza" method="post" action="" onsubmit="return fun()">
+
+          select the size of your piza:<br/>
+
+          <select name = "size">
+
+                     <option value = "10" selected>small</option>
+
+                     <option value = "12">medium</option>
+
+                     <option value = "15">large</option>
+
+                  </select>
+
+                  
+
+           <br/>
+
+           Select the number of toppings:
+
+          <br/>How many Ham toppings: $3/each topping
+
+           <input type="text" name="ham" value="1" size="5" maxlength = "5">
+
+          <br/>How many Pepperoni toppings: $5/each topping
+
+           <input type="text" name="pepperoni" value="1" size="5" maxlength = "5">
+
+          <br/>How many Mushroom toppings: $4/each topping
+
+           <input type="text" name="mushrooms" value="1" size="5" maxlength = "5">
+
+          <br/>How many Pineapple toppings: $2/each topping
+
+           <input type="text" name="pineapple" value="1" size="5" maxlength = "5">           
+
+          <br/>
+
+         <input type = "submit" name="submit" value = "calculate pizza" />
+
+      </form>
+
+   </body>
+
+</html>
